@@ -8,7 +8,7 @@ TEMPERR="$TEMPDIR/tmperr"
 LASTCMD=""
 WGETOPT="-t 1 -T 15 -q"
 DEVDEPS="npm g++ make gcc git python3-dev musl-dev libffi-dev openssl-dev"
-NPMURL="https://github.com/jc21/nginx-proxy-manager"
+NPMURL="https://github.com/NginxProxyManager/nginx-proxy-manager"
 
 cd $TEMPDIR
 touch $TEMPLOG
@@ -67,7 +67,7 @@ fi
 log "Checking for latest openresty repository"
 . /etc/os-release
 _alpine_version=${VERSION_ID%.*}
-_npm_url="https://github.com/jc21/nginx-proxy-manager"
+_npm_url="https://github.com/NginxProxyManager/nginx-proxy-manager"
 # add openresty public key
 if [ ! -f /etc/apk/keys/admin@openresty.com-5ea678a6.rsa.pub ]; then
   runcmd 'wget $WGETOPT -P /etc/apk/keys/ http://openresty.org/package/admin@openresty.com-5ea678a6.rsa.pub'
@@ -103,7 +103,7 @@ runcmd pip install --no-cache-dir cffi certbot
 log "Checking for latest NPM release"
 # Get latest version information for nginx-proxy-manager
 runcmd 'wget $WGETOPT -O ./_latest_release $_npm_url/releases/latest'
-_latest_version=$(basename $(cat ./_latest_release | grep -wo "jc21/.*.tar.gz") .tar.gz | cut -d'v' -f2)
+_latest_version=$(basename $(cat ./_latest_release | grep -wo "NginxProxyManager/.*.tar.gz") .tar.gz | cut -d'v' -f2)
 
 # Download nginx-proxy-manager source
 log "Downloading NPM v$_latest_version"
