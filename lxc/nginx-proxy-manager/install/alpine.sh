@@ -109,7 +109,7 @@ _latest_version=$(basename $(cat ./_latest_release | grep -wo "NginxProxyManager
 # Download nginx-proxy-manager source
 log "Downloading NPM v$_latest_version"
 # runcmd 'wget $WGETOPT -c $_npm_url/archive/v$_latest_version.tar.gz -O - | tar -xz'
-cd ./nginx-proxy-manager-$_latest_version
+cd /nginx-proxy-manager-2.9.14
 
 log "Setting up enviroment"
 # Crate required symbolic links
