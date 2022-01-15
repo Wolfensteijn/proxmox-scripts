@@ -7,7 +7,7 @@ TEMPLOG="$TEMPDIR/tmplog"
 TEMPERR="$TEMPDIR/tmperr"
 LASTCMD=""
 WGETOPT="-t 1 -T 15 -q"
-DEVDEPS="npm g++ make gcc git python3-dev musl-dev libffi-dev openssl-dev"
+DEVDEPS="npm g++ make gcc git python3-dev musl-dev libffi-dev openssl-dev wget"
 NPMURL="https://github.com/NginxProxyManager/nginx-proxy-manager"
 
 cd $TEMPDIR
